@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Pagination from '../../components/Pagination';
-import Row from './Row';
+import Table from '../../components/Table';
 import Search from '../../components/Search';
 import {
   calculateTotalNumberOfPages,
@@ -9,7 +9,7 @@ import {
   getCurrentPageData,
 } from './helpers';
 
-const DataTable = ({ rows, locale, rowsPerPage = 40 }) => {
+const DataTable = ({ rows, rowsPerPage = 40 }) => {
   const [currentPageNumber, setCurrentPageNumber] = useState(0);
   const [queryString, setQueryString] = useState('');
 
@@ -34,13 +34,7 @@ const DataTable = ({ rows, locale, rowsPerPage = 40 }) => {
   return (
     <div>
       <Search onSearch={searchHandler} />
-      <table>
-        <tbody>
-          {currentDisplayRows.map((row) => (
-            <Row key={row.per_id} row={row} />
-          ))}
-        </tbody>
-      </table>
+      <Table tableData={currentDisplayRows} />
       <Pagination
         currentPageNumber={currentPageNumber}
         totalNumberOfPages={totalNumberOfPages}
