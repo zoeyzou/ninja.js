@@ -1,14 +1,6 @@
 import React from 'react';
 
-const Row = ({ link, name, email }) => (
-  <tr>
-    <td>
-      <a href={link}>{name}</a>
-      <br />
-      <small>{email}</small>
-    </td>
-  </tr>
-);
+import Row from './TableRow';
 
 const Table = ({ tableData }) => {
   return (
@@ -18,8 +10,8 @@ const Table = ({ tableData }) => {
           <Row
             key={row.per_id}
             link={row.edit_path}
-            name={row.name1}
-            email={row.email}
+            title={row.name1}
+            subtitle={row.email}
           />
         ))}
       </tbody>
