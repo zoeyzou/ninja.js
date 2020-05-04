@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ onSearch }) => {
+const Search = ({ onSearch, placeholder = 'Søg brugere' }) => {
   const searchHandler = (event) => {
     // parse the string if needed here
     onSearch(event.target.value);
@@ -11,7 +11,7 @@ const Search = ({ onSearch }) => {
       <input
         type='search'
         className='form-control'
-        placeholder='Søg brugere'
+        placeholder={placeholder}
         onChange={searchHandler}
       />
     </div>

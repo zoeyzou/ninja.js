@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Pagination from '../../components/Pagination';
 import Row from './Row';
-import Search from './Search';
+import Search from '../../components/Search';
 import {
   calculateTotalNumberOfPages,
   getSearchResult,
