@@ -32,7 +32,7 @@ const DataTable = ({ rows, rowsPerPage = 40 }) => {
   const changeToPageNumber = (pageNumber) => setCurrentPageNumber(pageNumber);
 
   return (
-    <div>
+    <div className='container mt-3'>
       <Search onSearch={searchHandler} />
       <Table tableData={currentDisplayRows} />
       <Pagination

@@ -10,11 +10,7 @@ const App = () => {
     setUserData(data);
   }, []);
 
-  return (
-    <div className='container mt-3'>
-      <DataTable rows={userData} locale='da' rowsPerPage={5} />
-    </div>
-  );
+  return <DataTable rows={userData} locale='da' rowsPerPage={5} />;
 };
 
 export default App;
