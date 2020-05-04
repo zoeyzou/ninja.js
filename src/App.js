@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DataTable from './DataTable';
+import DataTable from './containers/DataTable';
 import './App.css';
 
 const App = () => {
