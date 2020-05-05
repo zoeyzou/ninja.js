@@ -10,7 +10,7 @@ const App = () => {
     setUserData(data);
   }, []);
 
-  return <DataTable rows={userData} locale='da' rowsPerPage={5} />;
+  return <DataTable rows={userData} rowsPerPage={5} />;
 };
 
 export default App;
