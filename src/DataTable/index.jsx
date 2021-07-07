@@ -12,7 +12,7 @@ class DataTable extends React.Component {
   };
 
   static defaultProps = {
-    rowsPerPage: 40,
+    rowsPerPage: 20,
   };
 
   calculateTotalNumberOfPages(rows) {
@@ -23,6 +23,7 @@ class DataTable extends React.Component {
 
   search(event) {
     const { rows } = this.props;
+
     const text = event.target.value;
 
     let rowsFound = text
@@ -54,15 +55,16 @@ class DataTable extends React.Component {
 
   render() {
     const { rows, currentPageNumber, totalNumberOfPages } = this.state;
-    const rowsToRender = rows
-      .map((row) => <Row key={row.per_id} row={row} />)
-      .slice(...this.rowsInPageNumber(currentPageNumber));
 
     return (
       <div>
         <Search onSearch={this.search.bind(this)} />
         <table>
-          <tbody>{rowsToRender}</tbody>
+          <tbody>
+            {rows
+              .map((row) => <Row key={row.per_id} row={row} />)
+              .slice(...this.rowsInPageNumber(currentPageNumber))}
+          </tbody>
         </table>
         <Pagination
           currentPageNumber={currentPageNumber}
