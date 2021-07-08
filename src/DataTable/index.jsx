@@ -16,7 +16,7 @@ const DataTable = ({ rowsFromParent, rowsPerPage = 40 }) => {
     [rowsPerPage]
   );
   useEffect(() => {
-    calculateTotalNumberOfPages(rows);
+    setTotalNumberOfPages(calculateTotalNumberOfPages(rows));
   }, [calculateTotalNumberOfPages, rows]);
 
   const search = (event) => {
