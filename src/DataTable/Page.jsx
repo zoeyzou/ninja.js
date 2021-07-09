@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Page = (props) => {
-  const { pageNumber, currentPageNumber, onChange } = props
+const Page = ({ pageNumber, currentPageNumber, onChange }) => {
+ 
 
   const isActivePage = () => {
-    return currentPageNumber == pageNumber
+    return currentPageNumber === pageNumber
   }
 
   const renderedPageNumber = () => {
