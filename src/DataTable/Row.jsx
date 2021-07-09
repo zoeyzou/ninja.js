@@ -1,12 +1,11 @@
 import React from 'react'
 
-const Row = (props) => {
-  const { row } = props
+const Row = ({ row }) => {
 
   return (
     <tr>
       <td>
-        <a href={row.edit_path}>
+        <a href={`${row.edit_path}/search?q=+${row.name1}`}>
           {row.name1}
         </a><br />
         <small>{row.email}</small>
