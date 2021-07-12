@@ -1,25 +1,24 @@
-import React from 'react'
+import React from 'react';
+import _ from 'lodash';
 
 import Page from './Page'
 
 const Pagination = ({ currentPageNumber, totalNumberOfPages, onChange }) => {
-  const pages =
-    Array
-      .from(Array(totalNumberOfPages).keys())
-      .map(pageNumber => {
-        return <Page
-          key={pageNumber}
-          currentPageNumber={currentPageNumber}
-          pageNumber={pageNumber}
-          onChange={onChange} />
-      })
 
-  if (pages.length <= 1) {
+  const pages = _.range(1, totalNumberOfPages + 1);
+
+  if (totalNumberOfPages === 1) {
     return null
   }
+
+
   return(
     <ul className="pagination">
-      {pages}
+      {pages.map((page)=><Page key={page}
+          currentPageNumber={currentPageNumber}
+          pageNumber={page}
+          onChange={onChange}  
+      />)}
     </ul>
   )
 }
